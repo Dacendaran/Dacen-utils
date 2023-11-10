@@ -1,0 +1,19 @@
+{
+  "name": "com.dacendaran.utils",
+  "version": "1.0.0",
+  "displayName": "Dacen Utils",
+  "description": "Contains utility functions and extension methods",
+  "documentationUrl": "https://example.com/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "keywords": [
+    "Reflection",
+    "Utils",
+    "Dacen"
+  ],
+  "author": {
+    "name": "Arne Gohlke",
+    "email": "arne.gohlke@gmail.com",
+    "url": "https://www.unity3d.com"
+  }
+}
