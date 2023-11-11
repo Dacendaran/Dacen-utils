@@ -30,5 +30,21 @@ namespace Dacen.ExtensionMethods.UI.Toolkit
             parent.Add(visualElement);
             return visualElement;
         }
+
+		public static T WithChild<T>(this T visualElement, VisualElement child) where T : VisualElement
+        {
+            visualElement.Add(child);
+            return visualElement;
+        }
+
+
+		public static T WithChildren<T>(this T visualElement, params VisualElement[] children) where T : VisualElement
+        {
+            foreach(var child in children)
+            {
+                visualElement.Add(child);
+            }
+            return visualElement;
+        }
     }
 }
