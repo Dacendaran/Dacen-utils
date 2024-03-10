@@ -31,5 +31,27 @@ namespace Dacen.ExtensionMethods.Dictionaries
         /// <param name="keys">The keys the dictionary should have</param>
         /// <returns>True if the dictionary contains all the passed keys, otherwise false</returns>
         public static bool ContainsKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey[] keys) => keys.All(k => dictionary.ContainsKey(k));
-    }
+
+		/// <summary>
+		/// Get unique random values
+		/// </summary>
+		/// <typeparam name="TKey">The type of the keys in this dictionary</typeparam>
+		/// <typeparam name="TValue">The type of the values in this dictionary</typeparam>
+		/// <param name="dictionary">The dictionary to get random values from</param>
+		/// <param name="amount">The amount of random values to get</param>
+		/// <returns>Unique random values</returns>
+		public static TValue[] GetRandomValues<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, int amount)
+		{
+			amount = Mathf.Clamp(amount, 1, dictionary.Count);
+			int[] indexes = new int[dictionary.Count];
+			indexes.Fill();
+			indexes.Shuffle();
+
+			TValue[] randomElements = new TValue[amount];
+			for (int i = 0; i < amount; i++)
+				randomElements[i] = dictionary.ElementAt(indexes[i]).Value;
+
+			return randomElements;
+		}
+	}
 }
