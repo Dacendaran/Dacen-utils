@@ -62,8 +62,8 @@ namespace Dacen.ExtensionMethods.Arrays
         /// <returns></returns>
         public static int[] Filled(this int[] array, int start = 0)
         {
-            this.Fill(start);
-            return this;
+            array.Fill(start);
+            return array;
         }
 
 		/// <summary>
