@@ -54,6 +54,18 @@ namespace Dacen.ExtensionMethods.Arrays
                 array[i] = i + start;
         }
 
+        /// <summary>
+        /// Same as <see cref="Fill(int[], int)"/>, but also returns the array
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
+        public static int[] Filled(this int[] array, int start = 0)
+        {
+            this.Fill(start);
+            return this;
+        }
+
 		/// <summary>
 		/// Fills the array with one value
 		/// </summary>
